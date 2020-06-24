@@ -1,0 +1,75 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply from: "$rootDir/tools/publish.gradle"
+apply from: "$rootDir/tools/ktlint.gradle"
+
+android {
+    compileSdkVersion project.compileSdkVersion
+    buildToolsVersion project.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion project.minSdkVersion
+        targetSdkVersion project.targetSdkVersion
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+
+        multiDexEnabled true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+    testOptions {
+        execution 'ANDROIDX_TEST_ORCHESTRATOR'
+    }
+
+    buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE*'
+        exclude 'META-INF/proguard/androidx-annotations.pro'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation "androidx.arch.core:core-testing:$rootProject.archLifecycleVersion"
+    implementation "androidx.core:core-ktx:$rootProject.coreKtxVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
+    implementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
+    implementation "androidx.test.espresso:espresso-intents:$rootProject.espressoVersion"
+    implementation "androidx.test.ext:junit:$rootProject.androidXJunitVersion"
+    implementation "androidx.test:runner:$rootProject.androidXTestVersion"
+    implementation "com.google.android.material:material:$rootProject.materialVersion"
+    implementation "com.natura.android:designsystem:$rootProject.designSystemVersion"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.junit.jupiter:junit-jupiter-api:$rootProject.junitJupiterVersion"
+    implementation "org.koin:koin-android:$rootProject.koinVersion"
+}
+
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
+}

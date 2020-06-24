@@ -1,0 +1,2 @@
+include ':testcommons'
+rootProject.name = 'nat-test-commons-android'
