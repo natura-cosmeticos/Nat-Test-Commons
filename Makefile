@@ -9,5 +9,3 @@ run-lint-rules:
 
 publish-test-lib-prod: clean
 	./gradlew build publish --stacktrace
-
-run-all-sanitycheck-steps: lint unit-test instrumentation-test
