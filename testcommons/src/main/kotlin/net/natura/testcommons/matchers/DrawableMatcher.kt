@@ -7,6 +7,15 @@ import androidx.core.graphics.drawable.toBitmap
 import org.hamcrest.Description
 import org.hamcrest.TypeSafeMatcher
 
+/**
+ * Checks if the view is displaying a given drawable.
+ *
+ * Example usage:
+ * ```
+ * onView(withId(R.id.the_imageview)).check(matches(withDrawable(R.drawable.my_drawable)))
+ * ```
+ * @param id The drawable's resource id
+ */
 fun withDrawable(@DrawableRes id: Int) = object : TypeSafeMatcher<View>() {
 
     override fun describeTo(description: Description) {

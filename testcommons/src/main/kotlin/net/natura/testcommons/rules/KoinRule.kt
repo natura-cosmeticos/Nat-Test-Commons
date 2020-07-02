@@ -7,6 +7,19 @@ import org.koin.core.context.startKoin
 import org.koin.core.context.stopKoin
 import org.koin.core.module.Module
 
+/**
+ * A JUnit4 rule that starts and stops Koin instance between tests.
+ *
+ * Example usage:
+ * ```
+ * class MyActivityTest {
+ *
+ *     @get:Rule
+ *     val koinRule = KoinRule()
+ * }
+ * ```
+ * @param injectedModule Module that can be injected at start (optional).
+ */
 class KoinRule(private val injectedModule: Module? = null) : TestRule {
 
     override fun apply(base: Statement?, description: Description?) = object : Statement() {

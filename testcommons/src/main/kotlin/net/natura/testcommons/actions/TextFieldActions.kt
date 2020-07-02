@@ -12,6 +12,15 @@ import net.natura.testcommons.R
 import org.hamcrest.CoreMatchers.allOf
 import org.hamcrest.Matcher
 
+/**
+ * Set a value to the EditText inside the [TextField].
+ *
+ * Example usage:
+ * ```
+ * onView(withId(R.id.the_textfield_id)).perform(typeValueInTextField("my text"))
+ * ```
+ * @param text the string to be set.
+ */
 fun typeValueInTextField(text: String) = object : ViewAction {
 
     override fun getDescription(): String = "type $text in TextField"
