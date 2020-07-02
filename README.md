@@ -1,18 +1,17 @@
 # Nat Test Commons Android
 
 ### What for
-Library with helper classes designed to speed up the test-creating process.
+Library with helper functions designed to speed up the test-creating process.
 
 ### Setup
 Copy and paste the file **github_credentials.properties.sample** and rename it to **github_credentials.properties**. Updating the fields **github.username** and **github.password**. For getting your GitHub password see the [Tutorial](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line). Its important to check **read:packages** and when generating you password.
 
-**Important:** The file **github_credentials.properties** can not be commited.
+**Important:** The file **github_credentials.properties** can not be committed.
 
-### Sample
-In construction
+### Documentation
+Example usages can be found as comments on top of every class and function.
 
 ## How to contribute
-
 You can contribute submitting [pull requests](https://github.com/natura-cosmeticos/Nat-Test-Commons/pulls).
 
 ### How to create a new version
