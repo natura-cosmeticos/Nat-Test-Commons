@@ -9,7 +9,7 @@ Copy and paste the file **github_credentials.properties.sample** and rename it t
 **Important:** The file **github_credentials.properties** can not be committed.
 
 ### Documentation
-Example usages can be found as comments on top of every class and function. For a complete report with all functions run the following command:
+Example usages can be found in [our Wiki](https://github.com/natura-cosmeticos/Nat-Test-Commons/wiki). If you want to generate the documentation on your own run the following command:
 
     make documentation
 
