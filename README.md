@@ -9,7 +9,11 @@ Copy and paste the file **github_credentials.properties.sample** and rename it t
 **Important:** The file **github_credentials.properties** can not be committed.
 
 ### Documentation
-Example usages can be found as comments on top of every class and function.
+Example usages can be found as comments on top of every class and function. For a complete report with all functions run the following command:
+
+    make documentation
+
+The report will be available at `testcommons/build/dokka/testcommons/index.html`
 
 ## How to contribute
 You can contribute submitting [pull requests](https://github.com/natura-cosmeticos/Nat-Test-Commons/pulls).
