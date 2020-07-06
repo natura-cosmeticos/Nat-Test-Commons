@@ -34,6 +34,5 @@ class KoinRule(private val injectedModule: Module? = null) : TestRule {
                 stopKoin()
             }
         }
-
     }
 }
