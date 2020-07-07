@@ -1,7 +1,7 @@
 apply plugin: 'maven-publish'
 
 def githubProperties = new Properties()
-if (file("github_credentials.properties").file) {
+if (file("../github_credentials.properties").file) {
     githubProperties.load(new FileInputStream(rootProject.file("github_credentials.properties")))
 }
 
@@ -14,7 +14,7 @@ def getGroupId = { ->
 }
 
 def getArtifactId = { ->
-    return "test-commons"
+    return "testcommons"
 }
 
 publishing {
