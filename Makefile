@@ -1,6 +1,9 @@
 clean:
 	./gradlew clean
 
+build:
+	./gradlew build
+
 lint:
 	./gradlew ktlint
 
@@ -10,5 +13,5 @@ run-lint-rules:
 documentation:
 	./gradlew dokka
 
-publish-test-lib-prod: clean
-	./gradlew build publish --stacktrace
+publish-test-lib-prod: clean build
+	./gradlew publish --stacktrace
