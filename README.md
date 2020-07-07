@@ -13,7 +13,7 @@ Example usages can be found in [our Wiki](https://github.com/natura-cosmeticos/N
 
     make documentation
 
-The report will be available at `testcommons/build/dokka/testcommons/index.html`
+The Markdown files will be available at `$BUILD_DIR/dokka/testcommons/`
 
 ## How to contribute
 You can contribute submitting [pull requests](https://github.com/natura-cosmeticos/Nat-Test-Commons/pulls).
