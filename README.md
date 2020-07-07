@@ -18,6 +18,10 @@ The report will be available at `testcommons/build/dokka/testcommons/index.html`
 ## How to contribute
 You can contribute submitting [pull requests](https://github.com/natura-cosmeticos/Nat-Test-Commons/pulls).
 
+**Pull Request Best Practices**
+- If your Pull Request adds a new behavior or changes an existing one, you must update the documentation, following the instructions [here](#documentation).
+- If you need your change in an generated version of this library, change the version as described in the session [below](#how-to-create-a-new-version).
+
 ### How to create a new version
 In the file **publish.gradle** update field in the method **getVersionName** with the new version number. Example, for the version 1.0.1:
 
@@ -43,6 +47,6 @@ In the file build.gradle, insert the informations:
 And:
 
     dependencies {
-        androidTestImplementation "com.natura.android:test-commons:<version>"
-        testImplementation "com.natura.android:test-commons:<version>"    
+        androidTestImplementation "com.natura.android:testcommons:<version>"
+        testImplementation "com.natura.android:testcommons:<version>"    
     }
