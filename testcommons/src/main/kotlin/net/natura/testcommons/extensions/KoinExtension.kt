@@ -27,7 +27,7 @@ import org.koin.core.module.Module
  * class MyTest {
  *     @JvmField
  *     @RegisterExtension
- *     val koinExtension = KoinExtension(yourKoinModule)
+ *     val koinExtension = KoinExtension(listOf(koinModule1, koinModule2))
  * }
  * ```
  * When no parameters are needed:
@@ -36,15 +36,18 @@ import org.koin.core.module.Module
  * class MyTest {
  * }
  * ```
+ * @param injectedModuleList List of modules that can be injected at start (optional);
  * @param injectedModule Module that can be injected at start (optional).
  */
 class KoinExtension(
-    private val injectedModule: Module? = null
+    private val injectedModuleList: List<Module> = listOf()
 ) : BeforeEachCallback, AfterEachCallback {
+
+    constructor(injectedModule: Module) : this(listOf(injectedModule))
 
     override fun beforeEach(context: ExtensionContext?) {
         startKoin {
-            injectedModule?.let(::modules)
+            modules(injectedModuleList)
         }
     }
 

@@ -16,17 +16,28 @@ import org.koin.core.module.Module
  *
  *     @get:Rule
  *     val koinRule = KoinRule()
+ *
+ *     @get:Rule
+ *     val koinRuleWithModule = KoinRule(yourKoinModule)
+ *
+ *     @get:Rule
+ *     val koinRuleWithModuleList = KoinRule(listOf(koinModule1, koinModule2)
  * }
  * ```
+ * @param injectedModuleList List of modules that can be injected at start (optional);
  * @param injectedModule Module that can be injected at start (optional).
  */
-class KoinRule(private val injectedModule: Module? = null) : TestRule {
+class KoinRule(
+    private val injectedModuleList: List<Module> = listOf()
+) : TestRule {
+
+    constructor(injectedModule: Module) : this(listOf(injectedModule))
 
     override fun apply(base: Statement?, description: Description?) = object : Statement() {
         override fun evaluate() {
             try {
                 startKoin {
-                    injectedModule?.let(::modules)
+                    modules(injectedModuleList)
                 }
 
                 base?.evaluate()
