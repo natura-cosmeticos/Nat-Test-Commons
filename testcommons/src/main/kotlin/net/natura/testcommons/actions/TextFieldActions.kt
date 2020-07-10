@@ -13,10 +13,10 @@ import org.hamcrest.CoreMatchers.allOf
 import org.hamcrest.Matcher
 
 /**
- * Set a value to the EditText inside the [TextField].
+ * Set a value to the EditText inside the TextField.
  *
  * Example usage:
- * ```
+ * ```kotlin
  * onView(withId(R.id.the_textfield_id)).perform(typeValueInTextField("my text"))
  * ```
  * @param text the string to be set.
