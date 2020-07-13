@@ -1,0 +1,27 @@
+# Typo CI
+---
+
+dictionaries:
+  - en
+
+excluded_files:
+  - ".typo-ci.yml"
+  - "testcommons/build.gradle"
+
+excluded_words:
+  - androidx
+  - appbar
+  - appcompat
+  - CoreMatchers
+  - dimen
+  - drawables
+  - kotlinx
+  - Matchers
+  - Dokka
+  - natura
+  - Natura
+  - Koin
+  - typoci
+  - ViewMatchers
+
+spellcheck_filenames: true
