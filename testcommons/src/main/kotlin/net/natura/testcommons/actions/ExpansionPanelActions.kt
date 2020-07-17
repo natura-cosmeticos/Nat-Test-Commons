@@ -1,7 +1,7 @@
 package net.natura.testcommons.actions
 
 import android.view.View
-import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.cardview.widget.CardView
 import androidx.test.espresso.UiController
 import androidx.test.espresso.ViewAction
 import androidx.test.espresso.matcher.ViewMatchers
@@ -32,7 +32,7 @@ fun clickOnExpansionPanel() = object : ViewAction {
     }
 
     override fun perform(uiController: UiController?, view: View?) {
-        val expansionPanelContainer = (view as ExpansionPanel).findViewById<ConstraintLayout>(R.id.ds_expansion_panel_content_area)
+        val expansionPanelContainer = (view as ExpansionPanel).findViewById<CardView>(R.id.ds_expansion_panel_container)
         expansionPanelContainer.callOnClick()
     }
 }
